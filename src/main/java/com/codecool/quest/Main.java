@@ -18,9 +18,10 @@ import javafx.stage.Stage;
 public class Main extends Application {
     GameMap map = MapLoader.loadMap();
     Canvas canvas = new Canvas(
-            map.getWidth() * Tiles.TILE_WIDTH,
-            map.getHeight() * Tiles.TILE_WIDTH);
+            map.getWidth() * Tiles.TILE_WIDTH / 1.2,
+            map.getHeight() * Tiles.TILE_WIDTH / 0.8);
     GraphicsContext context = canvas.getGraphicsContext2D();
+
     Label healthLabel = new Label();
 
     public static void main(String[] args) {
@@ -30,7 +31,7 @@ public class Main extends Application {
     @Override
     public void start(Stage primaryStage) throws Exception {
         GridPane ui = new GridPane();
-        ui.setPrefWidth(200);
+        ui.setPrefWidth(150);
         ui.setPadding(new Insets(10));
 
         ui.add(new Label("Health: "), 0, 0);
