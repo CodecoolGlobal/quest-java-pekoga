@@ -29,16 +29,86 @@ public class MapLoader {
                         case 'a':
                             cell.setType(CellType.HOUSE1);
                             break;
+                        case 'b':
+                            cell.setType(CellType.HOUSE2);
+                            break;
+                        case 'c':
+                            cell.setType(CellType.HOUSE3);
+                            break;
+                        case 'd':
+                            cell.setType(CellType.HOUSE4);
+                            break;
+                        case 'x':
+                            cell.setType(CellType.TRUCK1);
+                            break;
+                        case 'y':
+                            cell.setType(CellType.TRUCK2);
+                            break;
+                        case 'p':
+                            cell.setType(CellType.CARH1);
+                            break;
+                        case 'q':
+                            cell.setType(CellType.CARH2);
+                            break;
+                        case 'v':
+                            cell.setType(CellType.CARV1);
+                            break;
+                        case 'V':
+                            cell.setType(CellType.CARV2);
+                            break;
+                        case '1':
+                            cell.setType(CellType.BUILDING1);
+                            break;
+                        case '2':
+                            cell.setType(CellType.BUILDING2);
+                            break;
+                        case '3':
+                            cell.setType(CellType.BUILDING3);
+                            break;
+                        case '4':
+                            cell.setType(CellType.BUILDING4);
+                            break;
+                        case '5':
+                            cell.setType(CellType.BUILDING5);
+                            break;
+                        case '6':
+                            cell.setType(CellType.BUILDING6);
+                            break;
+                        case '7':
+                            cell.setType(CellType.BUILDING7);
+                            break;
+                        case '8':
+                            cell.setType(CellType.BUILDING8);
+                            break;
+                        case '9':
+                            cell.setType(CellType.BUILDING9);
+                            break;
                         case '#':
                             cell.setType(CellType.ROAD);
                             break;
                         case '.':
                             cell.setType(CellType.PAVEMENT1);
                             break;
+                        case ',':
+                            cell.setType(CellType.PAVEMENT2);
+                            break;
                         /*case 's':
                             cell.setType(CellType.ENEMY);
                             new Skeleton(cell);
+                            break;*/
+                        case '@':
+                            cell.setType(CellType.EMPTY);
+                            map.setPlayer(new Player(cell));
                             break;
+                        /*case 'W':
+                            cell.setType(CellType.FLOOR);
+                            new Weapon(cell);
+                            break;*/
+                        /*case 'C':
+                            cell.setType(CellType.CLOSED);
+                            break;
+                        case 'O':
+                            cell.setType(CellType.OPENED);
                         case '@':
                             cell.setType(CellType.FLOOR);
                             map.setPlayer(new Player(cell));
