@@ -1,21 +1,20 @@
-26 20
-#############
-#...........#    ########
-#...s...s...######......#
-#....P.......O..C.......#
-#...........######......#
-#.....s.....#    #......#
-#...........#    #......#
-#...........#    #......#
-#####..######    ###..###
-    #..#           #..#
-    #..#           #..#
-    #..#          ##..##
-  ###..####      #......#
-  #..@....#      ##.....#
-  #.......#      #......##
-  #.......#      #......##
-  #...W...#      #..W...##
-  #.......#      #......##
-  #.......#      #......##
-  #########       ######
+53 25
+abcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdab
+.pq............pqp.............p...........xy............a
+########################################################.b
+########################################################.c
+......xy.............##......................qp.......##vd
+abcdabcdabcdabcdabcd.##.abcdabcdabcd,,,,,,,,,,,,,,,,,.##.a
+,,,,,,,,,,,,,,,,,,,,.##.,,,,,,,,,,,,1222222222222223,.##.b
+,tttttttttttttttttttttttttttttttttt,4555555555555556,.##Vc
+,tttttttttttttttttttttttttttttttttt,4555555555555556,v##.d
+,tttttttttttttttttttttttttttttttttt,4555555555555556,.##.a
+,tttttttttttttttttttttttttttttttttt,4555555555555556,.##.b
+,tttttttttttttttttttttttttttttttttt,455555555555555C..##.c
+,tttttttttttttttttttttttttttttttttt,4555555555555556,v##.d
+,tttttttttttttttttttttttttttttttttt,4555555555555556,.##.a
+,tttttttttttttttttttttttttttttttttt,4555555555555556,.##.b
+,tttttttttttttttttttttttttttttttttt,4555555555555556,V##.c
+,tttttttttttttttttttttttttttttttttt,7888888888888889,.##.d
+,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,.##.a
+
