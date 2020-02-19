@@ -44,6 +44,15 @@ public class MapLoader {
                             cell.setType(CellType.FLOOR);
                             new Weapon(cell);
                             break;
+                        case 'C':
+                            cell.setType(CellType.CLOSED);
+                            break;
+                        case 'O':
+                            cell.setType(CellType.OPENED);
+                            break;
+                        case 'P':
+                            cell.setType(CellType.PISTOL);
+                            break;
                         default:
                             throw new RuntimeException("Unrecognized character: '" + line.charAt(x) + "'");
                     }
