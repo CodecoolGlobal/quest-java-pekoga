@@ -26,13 +26,16 @@ public class MapLoader {
                         case ' ':
                             cell.setType(CellType.EMPTY);
                             break;
+                        case 'a':
+                            cell.setType(CellType.HOUSE1);
+                            break;
                         case '#':
-                            cell.setType(CellType.WALL);
+                            cell.setType(CellType.ROAD);
                             break;
                         case '.':
-                            cell.setType(CellType.FLOOR);
+                            cell.setType(CellType.PAVEMENT1);
                             break;
-                        case 's':
+                        /*case 's':
                             cell.setType(CellType.ENEMY);
                             new Skeleton(cell);
                             break;
@@ -43,15 +46,15 @@ public class MapLoader {
                         case 'W':
                             cell.setType(CellType.FLOOR);
                             new Weapon(cell);
-                            break;
+                            break;*/
                         case 'C':
                             cell.setType(CellType.CLOSED);
                             break;
                         case 'O':
                             cell.setType(CellType.OPENED);
                             break;
-                        case 'P':
-                            cell.setType(CellType.PISTOL);
+                        case 't':
+                            cell.setType(CellType.TREE);
                             break;
                         default:
                             throw new RuntimeException("Unrecognized character: '" + line.charAt(x) + "'");
