@@ -1,6 +1,9 @@
 package com.codecool.quest;
 
 import com.codecool.quest.logic.Drawable;
+import com.codecool.quest.logic.actors.Player;
+import javafx.scene.Camera;
+import javafx.scene.Scene;
 import javafx.scene.canvas.GraphicsContext;
 import javafx.scene.image.Image;
 
@@ -35,6 +38,6 @@ public class Tiles {
     public static void drawTile(GraphicsContext context, Drawable d, int x, int y) {
         Tile tile = tileMap.get(d.getTileName());
         context.drawImage(tileset, tile.x, tile.y, tile.w, tile.h,
-                x * TILE_WIDTH, y * TILE_WIDTH, TILE_WIDTH, TILE_WIDTH);
+                x * TILE_WIDTH - Player.getX() * TILE_WIDTH / 2.0, y * TILE_WIDTH - Player.getY() * TILE_WIDTH / 2.0, TILE_WIDTH, TILE_WIDTH);
     }
 }

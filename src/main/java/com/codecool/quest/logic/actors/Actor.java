@@ -5,7 +5,7 @@ import com.codecool.quest.logic.CellType;
 import com.codecool.quest.logic.Drawable;
 
 public abstract class Actor implements Drawable {
-    private Cell cell;
+    private static Cell cell;
     private int health = 10;
 
     public Actor(Cell cell) {
@@ -32,11 +32,11 @@ public abstract class Actor implements Drawable {
         return cell;
     }
 
-    public int getX() {
+    public static int getX() {
         return cell.getX();
     }
 
-    public int getY() {
+    public static int getY() {
         return cell.getY();
     }
 }
