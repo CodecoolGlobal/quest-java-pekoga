@@ -5,6 +5,7 @@ import com.codecool.quest.logic.GameMap;
 import com.codecool.quest.logic.MapLoader;
 import javafx.application.Application;
 import javafx.geometry.Insets;
+import javafx.geometry.Pos;
 import javafx.scene.Scene;
 import javafx.scene.canvas.Canvas;
 import javafx.scene.canvas.GraphicsContext;
@@ -18,8 +19,8 @@ import javafx.stage.Stage;
 public class Main extends Application {
     GameMap map = MapLoader.loadMap();
     Canvas canvas = new Canvas(
-            map.getWidth() * Tiles.TILE_WIDTH / 1.2,
-            map.getHeight() * Tiles.TILE_WIDTH / 0.8);
+            map.getWidth() * Tiles.TILE_WIDTH / 1.6,
+            map.getHeight() * Tiles.TILE_WIDTH / 0.5);
     GraphicsContext context = canvas.getGraphicsContext2D();
 
     Label healthLabel = new Label();
@@ -33,7 +34,7 @@ public class Main extends Application {
     public void start(Stage primaryStage) throws Exception {
         GridPane ui = new GridPane();
         ui.setPrefWidth(150);
-        ui.setPadding(new Insets(10));
+        ui.setPadding(new Insets(5));
 
         ui.add(new Label("Health: "), 0, 0);
         ui.add(healthLabel, 1, 0);
