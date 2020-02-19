@@ -19,7 +19,7 @@ import javafx.stage.Stage;
 public class Main extends Application {
     GameMap map = MapLoader.loadMap();
     Canvas canvas = new Canvas(
-            map.getWidth() * Tiles.TILE_WIDTH / 1.6,
+            map.getWidth() * Tiles.TILE_WIDTH / 2.0,
             map.getHeight() * Tiles.TILE_WIDTH / 0.5);
     GraphicsContext context = canvas.getGraphicsContext2D();
 

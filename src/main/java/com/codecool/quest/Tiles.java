@@ -27,6 +27,7 @@ public class Tiles {
     }
 
     static {
+        tileMap.put("empty", new Tile(0, 0));
         tileMap.put("road", new Tile(0, 0));
         tileMap.put("wall", new Tile(8, 0));
         tileMap.put("floor", new Tile(2, 0));
@@ -63,6 +64,6 @@ public class Tiles {
     public static void drawTile(GraphicsContext context, Drawable d, int x, int y) {
         Tile tile = tileMap.get(d.getTileName());
         context.drawImage(tileset, tile.x, tile.y, tile.w, tile.h,
-                x * TILE_WIDTH - Player.getX() * TILE_WIDTH / 2.0, y * TILE_WIDTH - Player.getY() * TILE_WIDTH / 2.0, TILE_WIDTH, TILE_WIDTH);
+                x * TILE_WIDTH - Player.getX() * TILE_WIDTH / 1.4, y * TILE_WIDTH - Player.getY() * TILE_WIDTH / 2.0, TILE_WIDTH, TILE_WIDTH);
     }
 }
