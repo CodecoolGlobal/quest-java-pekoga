@@ -40,8 +40,10 @@ public class Main extends Application {
 
         ui.add(new Label("Health: "), 0, 0);
         ui.add(healthLabel, 1, 0);
+        healthLabel.setFont(new Font("Arial", 20));
         ui.add(new Label("Money: "), 0, 2);
         ui.add(moneyLabel, 1, 2);
+        moneyLabel.setFont(new Font("Arial", 20));
         ui.add(new Label("\nInventory: \n"), 0, 3);
         ui.add(inventoryLabel, 0, 4);
         inventoryLabel.setFont(new Font("Arial", 20));
