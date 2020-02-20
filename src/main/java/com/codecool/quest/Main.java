@@ -19,11 +19,12 @@ import javafx.stage.Stage;
 public class Main extends Application {
     GameMap map = MapLoader.loadMap();
     Canvas canvas = new Canvas(
-            map.getWidth() * Tiles.TILE_WIDTH / 2.0,
-            map.getHeight() * Tiles.TILE_WIDTH / 0.5);
+            map.getWidth() * Tiles.TILE_WIDTH / 3.3,
+            map.getHeight() * Tiles.TILE_WIDTH / 0.1);
     GraphicsContext context = canvas.getGraphicsContext2D();
 
     Label healthLabel = new Label();
+    Label moneyLabel = new Label();
     Label inventoryLabel = new Label();
 
     public static void main(String[] args) {
@@ -34,12 +35,14 @@ public class Main extends Application {
     public void start(Stage primaryStage) throws Exception {
         GridPane ui = new GridPane();
         ui.setPrefWidth(150);
-        ui.setPadding(new Insets(5));
+        ui.setPadding(new Insets(0));
 
         ui.add(new Label("Health: "), 0, 0);
         ui.add(healthLabel, 1, 0);
-        ui.add(new Label("Inventory: "), 0, 1);
-        ui.add(inventoryLabel, 1, 1);
+        ui.add(new Label("Money: "), 0, 2);
+        ui.add(moneyLabel, 1, 2);
+        ui.add(new Label("\nInventory: \n"), 0, 3);
+        ui.add(inventoryLabel, 0, 4);
 
         BorderPane borderPane = new BorderPane();
 
@@ -92,5 +95,8 @@ public class Main extends Application {
             }
         }
         healthLabel.setText("" + map.getPlayer().getHealth());
+        moneyLabel.setText("" + map.getPlayer().getMoney());
+        map.getPlayer().setInventory();
+        inventoryLabel.setText("" + map.getPlayer().getInventory());
     }
 }

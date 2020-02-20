@@ -29,8 +29,8 @@ public enum CellType {
     BUILDING9("building9"),
     MONEY("money"),
     ENEMY("enemy"),
-    WEAPON("weapon"),
-    WEAPON2("weapon2");
+    WEAPON("pistol"),
+    WEAPON2("gun");
 
 
 
