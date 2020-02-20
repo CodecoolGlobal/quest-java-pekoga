@@ -94,10 +94,6 @@ public class MapLoader {
                         case ',':
                             cell.setType(CellType.PAVEMENT2);
                             break;
-                        /*case 's':
-                            cell.setType(CellType.ENEMY);
-                            new Skeleton(cell);
-                            break;*/
                         case '@':
                             cell.setType(CellType.EMPTY);
                             map.setPlayer(new Player(cell));
@@ -106,19 +102,6 @@ public class MapLoader {
                             cell.setType(CellType.EMPTY);
                             new Weapon(cell);
                             break;
-                        /*case 'C':
-                            cell.setType(CellType.CLOSED);
-                            break;
-                        case 'O':
-                            cell.setType(CellType.OPENED);
-                        case '@':
-                            cell.setType(CellType.FLOOR);
-                            map.setPlayer(new Player(cell));
-                            break;
-                        case 'W':
-                            cell.setType(CellType.FLOOR);
-                            new Weapon(cell);
-                            break;*/
                         case 'C':
                             cell.setType(CellType.CLOSED);
                             break;
