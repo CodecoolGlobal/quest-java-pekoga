@@ -37,6 +37,8 @@ public abstract class Actor implements Drawable {
             add(CellType.CARV2);
             add(CellType.CARH2);
             add(CellType.TRUCK1);
+            add(CellType.TRUCK2);
+            add(CellType.TREE);
             add(CellType.BUILDING1);
             add(CellType.BUILDING2);
             add(CellType.BUILDING3);
