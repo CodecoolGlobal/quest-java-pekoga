@@ -14,6 +14,7 @@ import javafx.scene.input.KeyEvent;
 import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.GridPane;
 import javafx.scene.paint.Color;
+import javafx.scene.text.Font;
 import javafx.stage.Stage;
 
 public class Main extends Application {
@@ -43,6 +44,7 @@ public class Main extends Application {
         ui.add(moneyLabel, 1, 2);
         ui.add(new Label("\nInventory: \n"), 0, 3);
         ui.add(inventoryLabel, 0, 4);
+        inventoryLabel.setFont(new Font("Arial", 20));
 
         BorderPane borderPane = new BorderPane();
 
