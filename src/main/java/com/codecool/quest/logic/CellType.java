@@ -30,7 +30,10 @@ public enum CellType {
     MONEY("money"),
     ENEMY("enemy"),
     WEAPON("pistol"),
-    WEAPON2("gun");
+    WEAPON2("gun"),
+    FLOWER("flower"),
+    WATER("water"),
+    GROUND("ground");
 
 
 

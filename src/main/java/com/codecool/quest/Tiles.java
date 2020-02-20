@@ -61,6 +61,11 @@ public class Tiles {
         tileMap.put("money", new Tile(11, 26));
         tileMap.put("enemy", new Tile(11, 20));
         tileMap.put("gun", new Tile(8, 31));
+        tileMap.put("flower", new Tile(15, 6));
+        tileMap.put("water", new Tile(8, 5));
+        tileMap.put("ground", new Tile(2, 0));
+
+
     }
 
     public static void drawTile(GraphicsContext context, Drawable d, int x, int y) {

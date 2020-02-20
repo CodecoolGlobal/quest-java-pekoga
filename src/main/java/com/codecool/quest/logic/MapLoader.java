@@ -111,6 +111,15 @@ public class MapLoader {
                         case 't':
                             cell.setType(CellType.TREE);
                             break;
+                        case 'f':
+                            cell.setType(CellType.FLOWER);
+                            break;
+                        case 'g':
+                            cell.setType(CellType.GROUND);
+                            break;
+                        case 'w':
+                            cell.setType(CellType.WATER);
+                            break;
                         case 'M':
                             cell.setType(CellType.EMPTY);
                             new Money(cell);
