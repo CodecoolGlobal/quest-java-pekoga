@@ -85,6 +85,7 @@ public abstract class Actor implements Drawable {
     }
 
     public void setInventory() {
+        inventory = "";
         if (hasGun) {
             inventory += "GUN\n";
         }
@@ -93,6 +94,25 @@ public abstract class Actor implements Drawable {
         }
         if (hasPistol) {
             inventory += "PISTOL\n";
+        }
+    }
+
+    public void pickUpItem(String itemType, int dx, int dy) {
+        if (getCell().getNeighbor(dx, dy).getItem() != null) {
+            if (getCell().getNeighbor(dx, dy).getItem().getTileName().equals(itemType)) {
+                switch (itemType) {
+                    case "gun":
+                        setHasGun(true);
+                        break;
+                    case "pistol":
+                        setHasPistol(true);
+                        break;
+                    case "key":
+                        setHasKey(true);
+                        break;
+                }
+                setInventory();
+            }
         }
     }
 }

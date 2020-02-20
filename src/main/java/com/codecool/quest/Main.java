@@ -61,24 +61,30 @@ public class Main extends Application {
     private void onKeyPressed(KeyEvent keyEvent) {
         switch (keyEvent.getCode()) {
             case UP:
-                if (map.getPlayer().getCell().getNeighbor(0, -1).getItem() != null) {
-                    if (map.getPlayer().getCell().getNeighbor(0, -1).getItem().getTileName().equals("gun")) {
-                        map.getPlayer().setHasGun(true);
-                        map.getPlayer().setInventory();
-                    }
-                }
+                map.getPlayer().pickUpItem("gun", 0, -1);
+                map.getPlayer().pickUpItem("key", 0, -1);
+                map.getPlayer().pickUpItem("pistol", 0, -1);
                 map.getPlayer().move(0, -1);
                 refresh();
                 break;
             case DOWN:
+                map.getPlayer().pickUpItem("gun", 0, 1);
+                map.getPlayer().pickUpItem("key", 0, 1);
+                map.getPlayer().pickUpItem("pistol", 0, 1);
                 map.getPlayer().move(0, 1);
                 refresh();
                 break;
             case LEFT:
+                map.getPlayer().pickUpItem("gun", -1, 0);
+                map.getPlayer().pickUpItem("key", -1, 0);
+                map.getPlayer().pickUpItem("pistol", -1, 0);
                 map.getPlayer().move(-1, 0);
                 refresh();
                 break;
             case RIGHT:
+                map.getPlayer().pickUpItem("gun", 1, 0);
+                map.getPlayer().pickUpItem("key", 1, 0);
+                map.getPlayer().pickUpItem("pistol", 1, 0);
                 map.getPlayer().move(1, 0);
                 refresh();
                 break;
