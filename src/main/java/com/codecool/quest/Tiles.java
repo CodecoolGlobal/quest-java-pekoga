@@ -65,6 +65,8 @@ public class Tiles {
         tileMap.put("water", new Tile(8, 5));
         tileMap.put("ground", new Tile(2, 0));
         tileMap.put("duck", new Tile(25, 7));
+        tileMap.put("dog", new Tile(31, 7));
+        tileMap.put("pedestrian", new Tile(30,3));
 
 
     }

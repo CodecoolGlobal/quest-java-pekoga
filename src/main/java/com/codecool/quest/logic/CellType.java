@@ -34,7 +34,9 @@ public enum CellType {
     FLOWER("flower"),
     WATER("water"),
     GROUND("ground"),
-    DUCK("duck");
+    DUCK("duck"),
+    PEDESTRIAN("pedestrian"),
+    DOG("dog");
 
 
 

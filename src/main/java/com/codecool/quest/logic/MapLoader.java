@@ -134,6 +134,12 @@ public class MapLoader {
                             cell.setType(CellType.EMPTY);
                             new Weapon2(cell);
                             break;
+                        case 'P':
+                            cell.setType(CellType.PEDESTRIAN);
+                            break;
+                        case 'o':
+                            cell.setType(CellType.DOG);
+                            break;
                         default:
                             throw new RuntimeException("Unrecognized character: '" + line.charAt(x) + "'");
                     }
