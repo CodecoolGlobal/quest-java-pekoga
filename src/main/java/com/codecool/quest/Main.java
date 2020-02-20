@@ -61,6 +61,12 @@ public class Main extends Application {
     private void onKeyPressed(KeyEvent keyEvent) {
         switch (keyEvent.getCode()) {
             case UP:
+                if (map.getPlayer().getCell().getNeighbor(0, -1).getItem() != null) {
+                    if (map.getPlayer().getCell().getNeighbor(0, -1).getItem().getTileName().equals("gun")) {
+                        map.getPlayer().setHasGun(true);
+                        map.getPlayer().setInventory();
+                    }
+                }
                 map.getPlayer().move(0, -1);
                 refresh();
                 break;
@@ -96,7 +102,6 @@ public class Main extends Application {
         }
         healthLabel.setText("" + map.getPlayer().getHealth());
         moneyLabel.setText("" + map.getPlayer().getMoney());
-        map.getPlayer().setInventory();
         inventoryLabel.setText("" + map.getPlayer().getInventory());
     }
 }

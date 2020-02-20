@@ -9,7 +9,7 @@ import java.util.ArrayList;
 public abstract class Actor implements Drawable {
     private static Cell cell;
     private int health = 10;
-    private boolean hasKey = true;
+    private boolean hasKey = false;
     private boolean hasGun = false;
     private boolean hasPistol = false;
     private int money = 0;
