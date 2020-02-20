@@ -26,7 +26,13 @@ public enum CellType {
     BUILDING6("building6"),
     BUILDING7("building7"),
     BUILDING8("building8"),
-    BUILDING9("building9");
+    BUILDING9("building9"),
+    MONEY("money"),
+    ENEMY("enemy"),
+    WEAPON("weapon"),
+    WEAPON2("weapon2");
+
+
 
     private final String tileName;
 

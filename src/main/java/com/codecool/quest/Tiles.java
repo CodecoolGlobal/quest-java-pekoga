@@ -33,7 +33,7 @@ public class Tiles {
         tileMap.put("floor", new Tile(2, 0));
         tileMap.put("player", new Tile(14, 22));
         tileMap.put("skeleton", new Tile(29, 6));
-        tileMap.put("weapon", new Tile(0, 29));
+        tileMap.put("weapon", new Tile(5, 31));
         tileMap.put("closedDoor", new Tile(6, 16));
         tileMap.put("openedDoor", new Tile(9, 16));
         tileMap.put("pistol", new Tile(6, 31));
@@ -59,6 +59,9 @@ public class Tiles {
         tileMap.put("building7", new Tile(0, 18));
         tileMap.put("building8", new Tile(1, 18));
         tileMap.put("building9", new Tile(2, 18));
+        tileMap.put("money", new Tile(11, 26));
+        tileMap.put("enemy", new Tile(11, 20));
+        tileMap.put("weapon2", new Tile(8, 31));
     }
 
     public static void drawTile(GraphicsContext context, Drawable d, int x, int y) {

@@ -100,10 +100,10 @@ public class MapLoader {
                             cell.setType(CellType.EMPTY);
                             map.setPlayer(new Player(cell));
                             break;
-                        /*case 'W':
-                            cell.setType(CellType.FLOOR);
+                        case 'W':
+                            cell.setType(CellType.EMPTY);
                             new Weapon(cell);
-                            break;*/
+                            break;
                         /*case 'C':
                             cell.setType(CellType.CLOSED);
                             break;
@@ -125,6 +125,15 @@ public class MapLoader {
                             break;
                         case 't':
                             cell.setType(CellType.TREE);
+                            break;
+                        case 'M':
+                            cell.setType(CellType.MONEY);
+                            break;
+                        case 'E':
+                            cell.setType(CellType.ENEMY);
+                            break;
+                        case 'Q':
+                            cell.setType(CellType.WEAPON2);
                             break;
                         default:
                             throw new RuntimeException("Unrecognized character: '" + line.charAt(x) + "'");
