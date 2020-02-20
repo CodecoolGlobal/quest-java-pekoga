@@ -2,7 +2,9 @@ package com.codecool.quest.logic;
 
 import com.codecool.quest.logic.actors.Player;
 import com.codecool.quest.logic.actors.Skeleton;
+import com.codecool.quest.logic.items.Money;
 import com.codecool.quest.logic.items.Weapon;
+import com.codecool.quest.logic.items.Weapon2;
 
 import java.io.InputStream;
 import java.util.Scanner;
@@ -127,13 +129,15 @@ public class MapLoader {
                             cell.setType(CellType.TREE);
                             break;
                         case 'M':
-                            cell.setType(CellType.MONEY);
+                            cell.setType(CellType.EMPTY);
+                            new Money(cell);
                             break;
                         case 'E':
                             cell.setType(CellType.ENEMY);
                             break;
                         case 'Q':
-                            cell.setType(CellType.WEAPON2);
+                            cell.setType(CellType.EMPTY);
+                            new Weapon2(cell);
                             break;
                         default:
                             throw new RuntimeException("Unrecognized character: '" + line.charAt(x) + "'");
