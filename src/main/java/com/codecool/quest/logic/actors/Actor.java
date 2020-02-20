@@ -104,7 +104,7 @@ public abstract class Actor implements Drawable {
     }
 
     public void setMoney(int money) {
-        this.money = money;
+        this.money += money;
     }
 
     public String getInventory() {
@@ -139,6 +139,14 @@ public abstract class Actor implements Drawable {
                         break;
                 }
                 setInventory();
+            }
+        }
+    }
+
+    public void pickUpMoney(int dx, int dy) {
+        if (getCell().getNeighbor(dx, dy).getItem() != null) {
+            if (getCell().getNeighbor(dx, dy).getItem().getTileName().equals("money")) {
+                setMoney(100);
             }
         }
     }

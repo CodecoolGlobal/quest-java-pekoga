@@ -64,6 +64,7 @@ public class Main extends Application {
                 map.getPlayer().pickUpItem("gun", 0, -1);
                 map.getPlayer().pickUpItem("key", 0, -1);
                 map.getPlayer().pickUpItem("pistol", 0, -1);
+                map.getPlayer().pickUpMoney(0, -1);
                 map.getPlayer().move(0, -1);
                 refresh();
                 break;
@@ -71,6 +72,7 @@ public class Main extends Application {
                 map.getPlayer().pickUpItem("gun", 0, 1);
                 map.getPlayer().pickUpItem("key", 0, 1);
                 map.getPlayer().pickUpItem("pistol", 0, 1);
+                map.getPlayer().pickUpMoney(0, 1);
                 map.getPlayer().move(0, 1);
                 refresh();
                 break;
@@ -78,6 +80,7 @@ public class Main extends Application {
                 map.getPlayer().pickUpItem("gun", -1, 0);
                 map.getPlayer().pickUpItem("key", -1, 0);
                 map.getPlayer().pickUpItem("pistol", -1, 0);
+                map.getPlayer().pickUpMoney(-1, 0);
                 map.getPlayer().move(-1, 0);
                 refresh();
                 break;
@@ -85,6 +88,7 @@ public class Main extends Application {
                 map.getPlayer().pickUpItem("gun", 1, 0);
                 map.getPlayer().pickUpItem("key", 1, 0);
                 map.getPlayer().pickUpItem("pistol", 1, 0);
+                map.getPlayer().pickUpMoney(1, 0);
                 map.getPlayer().move(1, 0);
                 refresh();
                 break;
