@@ -12,8 +12,8 @@ abcdabcdabcdabcdabcd.##.abcdabcdabcd,,,,,,,##,,,,,,,,.##.a
 ,#####M##########################################M######.b
 ,adbccbadbdacaabdcca.###################################.c
 ,ttt,,,,,,,,,,tttttt.##.ttttffftttt,,,,,,,,,,,,,,,,,,v##.d
-,ttt,ttttttttttttttt.##.ttggfffggtt,1222222222222223,.##.a
-,ttt,,,,,,,,,,,,,,,,.##.ttgwwwwwgtt,4555555555555556,.##.b
+,ttt,ttttttttttttttt.##.ttgwwwwwgtt,1222222222222223,.##.a
+,ttt,,,,,,,,,,,,,,,,.##.ttgwnwnwgtt,4555555555555556,.##.b
 ,ttttt,ttttttttt,ttt.##.ttgwwwwwgtt,7888888888888889,V##.c
 ,tttt,,,,,,,,,,,,ttt.##.ttgggggggtt,,,,,,,,,,,,,,,,,,.##.d
 ########################################################.a

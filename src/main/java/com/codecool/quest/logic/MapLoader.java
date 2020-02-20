@@ -114,6 +114,9 @@ public class MapLoader {
                         case 'f':
                             cell.setType(CellType.FLOWER);
                             break;
+                        case 'n':
+                            cell.setType(CellType.DUCK);
+                            break;
                         case 'g':
                             cell.setType(CellType.GROUND);
                             break;
