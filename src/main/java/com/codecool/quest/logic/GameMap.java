@@ -21,7 +21,20 @@ public class GameMap {
     }
 
     public Cell getCell(int x, int y) {
-        return cells[x][y];
+        try {
+            return cells[x][y];
+        } catch (ArrayIndexOutOfBoundsException e) {
+            if (x >= width) {
+                x -= 1;
+            } else if (x <= 0) {
+                x += 1;
+            } else if (y >= height) {
+                y -= 1;
+            } else if (y <= 0) {
+                y += 1;
+            }
+            return cells[x][y];
+        }
     }
 
     public void setPlayer(Player player) {
