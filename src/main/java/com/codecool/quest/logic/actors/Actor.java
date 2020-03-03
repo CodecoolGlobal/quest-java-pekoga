@@ -11,7 +11,7 @@ import java.util.Set;
 
 public abstract class Actor implements Drawable {
     private static Cell cell;
-    private int health = 10;
+    private int health = 100;
     private boolean hasKey = false;
     private boolean hasGun = false;
     private boolean hasPistol = false;
