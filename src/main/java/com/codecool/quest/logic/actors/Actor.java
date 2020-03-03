@@ -4,8 +4,6 @@ import com.codecool.quest.logic.Cell;
 import com.codecool.quest.logic.CellType;
 import com.codecool.quest.logic.Drawable;
 
-import java.util.ArrayList;
-
 import java.util.HashSet;
 import java.util.Set;
 

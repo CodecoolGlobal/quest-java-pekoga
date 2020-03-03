@@ -1,18 +1,14 @@
 package com.codecool.quest;
 
 import com.codecool.quest.logic.Cell;
-import com.codecool.quest.logic.CellType;
 import com.codecool.quest.logic.GameMap;
 import com.codecool.quest.logic.MapLoader;
 import javafx.application.Application;
 import javafx.geometry.Insets;
-import javafx.geometry.Pos;
 import javafx.scene.Scene;
 import javafx.scene.canvas.Canvas;
 import javafx.scene.canvas.GraphicsContext;
-import javafx.scene.control.Button;
 import javafx.scene.control.Label;
-import javafx.scene.control.TextField;
 import javafx.scene.input.KeyEvent;
 import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.GridPane;
@@ -73,6 +69,7 @@ public class Main extends Application {
                 map.getPlayer().pickUpItem("pistol", 0, -1);
                 map.getPlayer().pickUpMoney(0, -1);
                 map.getPlayer().move(0, -1);
+                map.getPlayer().setPlayerTile("carv1");
                 refresh();
                 break;
             case DOWN:
@@ -81,6 +78,7 @@ public class Main extends Application {
                 map.getPlayer().pickUpItem("pistol", 0, 1);
                 map.getPlayer().pickUpMoney(0, 1);
                 map.getPlayer().move(0, 1);
+                map.getPlayer().setPlayerTile("carv1");
                 refresh();
                 break;
             case LEFT:
@@ -89,6 +87,7 @@ public class Main extends Application {
                 map.getPlayer().pickUpItem("pistol", -1, 0);
                 map.getPlayer().pickUpMoney(-1, 0);
                 map.getPlayer().move(-1, 0);
+                map.getPlayer().setPlayerTile("carh1");
                 refresh();
                 break;
             case RIGHT:
@@ -97,6 +96,7 @@ public class Main extends Application {
                 map.getPlayer().pickUpItem("pistol", 1, 0);
                 map.getPlayer().pickUpMoney(1, 0);
                 map.getPlayer().move(1, 0);
+                map.getPlayer().setPlayerTile("carh1");
                 refresh();
                 break;
         }
