@@ -75,7 +75,7 @@ public class Main extends Application {
                 player.pickUpItem("gun", 0, -1);
                 player.pickUpItem("key", 0, -1);
                 player.pickUpItem("pistol", 0, -1);
-                player.pickUpMoney(0, -1);
+                //player.pickUpMoney(0, -1);
                 player.hitPedestrian(0, -1);
                 player.move(0, -1);
                 refresh(player);
@@ -84,7 +84,7 @@ public class Main extends Application {
                 player.pickUpItem("gun", 0, 1);
                 player.pickUpItem("key", 0, 1);
                 player.pickUpItem("pistol", 0, 1);
-                player.pickUpMoney(0, 1);
+                //player.pickUpMoney(0, 1);
                 player.hitPedestrian(0, 1);
                 player.move(0, 1);
                 refresh(player);
@@ -93,7 +93,7 @@ public class Main extends Application {
                 player.pickUpItem("gun", -1, 0);
                 player.pickUpItem("key", -1, 0);
                 player.pickUpItem("pistol", -1, 0);
-                player.pickUpMoney(-1, 0);
+                //player.pickUpMoney(-1, 0);
                 player.hitPedestrian(-1, 0);
                 player.move(-1, 0);
                 refresh(player);
@@ -102,7 +102,7 @@ public class Main extends Application {
                 player.pickUpItem("gun", 1, 0);
                 player.pickUpItem("key", 1, 0);
                 player.pickUpItem("pistol", 1, 0);
-                player.pickUpMoney(1, 0);
+                //player.pickUpMoney(1, 0);
                 player.hitPedestrian(1, 0);
                 player.move(1, 0);
                 refresh(player);

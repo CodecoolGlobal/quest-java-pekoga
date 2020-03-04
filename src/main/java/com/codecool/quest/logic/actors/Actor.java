@@ -3,6 +3,7 @@ package com.codecool.quest.logic.actors;
 import com.codecool.quest.logic.Cell;
 import com.codecool.quest.logic.CellType;
 import com.codecool.quest.logic.Drawable;
+import com.codecool.quest.logic.items.Money;
 
 import java.util.ArrayList;
 
@@ -53,7 +54,12 @@ public abstract class Actor implements Drawable {
         CellType typeOfCell = nextCell.getType();
         if (!barrierSet.contains(typeOfCell)) {
             cell.setActor(null);
-            cell.setItem(null);
+            if (cell.getItem() != null && cell.getItem().getTileName().contains("money")) {
+                System.out.println(cell.getItem());
+            } else {
+                cell.setItem(null);
+
+            }
             nextCell.setActor(this);
             cell = nextCell;
         }
@@ -154,8 +160,9 @@ public abstract class Actor implements Drawable {
     public void hitPedestrian(int dx, int dy) {
         if (getCell().getNeighbor(dx, dy).getActor() != null) {
             if (getCell().getNeighbor(dx, dy).getActor().getTileName().equals("pedestrian")) {
-                setMoney(100);
-                //getCell().getNeighbor(dx, dy).setItem();
+                Money money = new Money(getCell().getNeighbor(dx, dy));
+                getCell().getNeighbor(dx, dy).setItem(money);
+                System.out.println(getCell().getNeighbor(dx, dy).getItem().getTileName());
             }
         }
     }
