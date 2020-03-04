@@ -150,4 +150,13 @@ public abstract class Actor implements Drawable {
             }
         }
     }
+
+    public void hitPedestrian(int dx, int dy) {
+        if (getCell().getNeighbor(dx, dy).getActor() != null) {
+            if (getCell().getNeighbor(dx, dy).getActor().getTileName().equals("pedestrian")) {
+                setMoney(100);
+                //getCell().getNeighbor(dx, dy).setItem();
+            }
+        }
+    }
 }

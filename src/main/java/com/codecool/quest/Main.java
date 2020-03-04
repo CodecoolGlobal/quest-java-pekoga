@@ -72,35 +72,39 @@ public class Main extends Application {
     private void onKeyPressed(KeyEvent keyEvent) {
         switch (keyEvent.getCode()) {
             case UP:
-                map.getPlayer().pickUpItem("gun", 0, -1);
-                map.getPlayer().pickUpItem("key", 0, -1);
-                map.getPlayer().pickUpItem("pistol", 0, -1);
-                map.getPlayer().pickUpMoney(0, -1);
-                map.getPlayer().move(0, -1);
+                player.pickUpItem("gun", 0, -1);
+                player.pickUpItem("key", 0, -1);
+                player.pickUpItem("pistol", 0, -1);
+                player.pickUpMoney(0, -1);
+                player.hitPedestrian(0, -1);
+                player.move(0, -1);
                 refresh(player);
                 break;
             case DOWN:
-                map.getPlayer().pickUpItem("gun", 0, 1);
-                map.getPlayer().pickUpItem("key", 0, 1);
-                map.getPlayer().pickUpItem("pistol", 0, 1);
-                map.getPlayer().pickUpMoney(0, 1);
-                map.getPlayer().move(0, 1);
+                player.pickUpItem("gun", 0, 1);
+                player.pickUpItem("key", 0, 1);
+                player.pickUpItem("pistol", 0, 1);
+                player.pickUpMoney(0, 1);
+                player.hitPedestrian(0, 1);
+                player.move(0, 1);
                 refresh(player);
                 break;
             case LEFT:
-                map.getPlayer().pickUpItem("gun", -1, 0);
-                map.getPlayer().pickUpItem("key", -1, 0);
-                map.getPlayer().pickUpItem("pistol", -1, 0);
-                map.getPlayer().pickUpMoney(-1, 0);
-                map.getPlayer().move(-1, 0);
+                player.pickUpItem("gun", -1, 0);
+                player.pickUpItem("key", -1, 0);
+                player.pickUpItem("pistol", -1, 0);
+                player.pickUpMoney(-1, 0);
+                player.hitPedestrian(-1, 0);
+                player.move(-1, 0);
                 refresh(player);
                 break;
             case RIGHT:
-                map.getPlayer().pickUpItem("gun", 1, 0);
-                map.getPlayer().pickUpItem("key", 1, 0);
-                map.getPlayer().pickUpItem("pistol", 1, 0);
-                map.getPlayer().pickUpMoney(1, 0);
-                map.getPlayer().move(1, 0);
+                player.pickUpItem("gun", 1, 0);
+                player.pickUpItem("key", 1, 0);
+                player.pickUpItem("pistol", 1, 0);
+                player.pickUpMoney(1, 0);
+                player.hitPedestrian(1, 0);
+                player.move(1, 0);
                 refresh(player);
                 break;
         }
