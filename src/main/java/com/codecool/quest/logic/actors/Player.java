@@ -13,7 +13,11 @@ public class Player extends Actor {
         return this.playerTile;
     }
 
-    public void setPlayerTile(String playerTile) {
-        this.playerTile = playerTile;
+    public void turnPlayer(String currentPlayerTile, String restrictedPlayerTile, String nextPlayerTile) {
+        if (currentPlayerTile.equals(restrictedPlayerTile)) {
+            this.playerTile = currentPlayerTile;
+        } else {
+            this.playerTile = nextPlayerTile;
+        }
     }
 }
