@@ -67,13 +67,14 @@ public class Tiles {
         tileMap.put("duck", new Tile(25, 7));
         tileMap.put("dog", new Tile(31, 7));
         tileMap.put("pedestrian", new Tile(30,3));
+        tileMap.put("key", new Tile(16, 24));
 
 
     }
 
-    public static void drawTile(GraphicsContext context, Drawable d, int x, int y) {
+    public static void drawTile(GraphicsContext context, Drawable d, int x, int y, Player player) {
         Tile tile = tileMap.get(d.getTileName());
         context.drawImage(tileset, tile.x, tile.y, tile.w, tile.h,
-                x * TILE_WIDTH - Player.getX() * TILE_WIDTH / 1.4, y * TILE_WIDTH - Player.getY() * TILE_WIDTH / 2.0, TILE_WIDTH, TILE_WIDTH);
+                x * TILE_WIDTH - player.getX() * TILE_WIDTH / 1.4, y * TILE_WIDTH - player.getY() * TILE_WIDTH / 2.0, TILE_WIDTH, TILE_WIDTH);
     }
 }

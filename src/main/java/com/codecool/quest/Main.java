@@ -3,6 +3,7 @@ package com.codecool.quest;
 import com.codecool.quest.logic.Cell;
 import com.codecool.quest.logic.GameMap;
 import com.codecool.quest.logic.MapLoader;
+import com.codecool.quest.logic.actors.Player;
 import javafx.application.Application;
 import javafx.geometry.Insets;
 import javafx.scene.Scene;
@@ -18,6 +19,7 @@ import javafx.stage.Stage;
 
 public class Main extends Application {
     GameMap map = MapLoader.loadMap();
+    Player player = map.getPlayer();
     Canvas canvas = new Canvas(
             map.getWidth() * Tiles.TILE_WIDTH / 3.3,
             map.getHeight() * Tiles.TILE_WIDTH / 0.1);
@@ -60,7 +62,7 @@ public class Main extends Application {
 
         Scene scene = new Scene(borderPane);
         primaryStage.setScene(scene);
-        refresh();
+        refresh(player);
         scene.setOnKeyPressed(this::onKeyPressed);
 
         primaryStage.setTitle("Codecool GTA");
@@ -75,7 +77,7 @@ public class Main extends Application {
                 map.getPlayer().pickUpItem("pistol", 0, -1);
                 map.getPlayer().pickUpMoney(0, -1);
                 map.getPlayer().move(0, -1);
-                refresh();
+                refresh(player);
                 break;
             case DOWN:
                 map.getPlayer().pickUpItem("gun", 0, 1);
@@ -83,7 +85,7 @@ public class Main extends Application {
                 map.getPlayer().pickUpItem("pistol", 0, 1);
                 map.getPlayer().pickUpMoney(0, 1);
                 map.getPlayer().move(0, 1);
-                refresh();
+                refresh(player);
                 break;
             case LEFT:
                 map.getPlayer().pickUpItem("gun", -1, 0);
@@ -91,7 +93,7 @@ public class Main extends Application {
                 map.getPlayer().pickUpItem("pistol", -1, 0);
                 map.getPlayer().pickUpMoney(-1, 0);
                 map.getPlayer().move(-1, 0);
-                refresh();
+                refresh(player);
                 break;
             case RIGHT:
                 map.getPlayer().pickUpItem("gun", 1, 0);
@@ -99,23 +101,23 @@ public class Main extends Application {
                 map.getPlayer().pickUpItem("pistol", 1, 0);
                 map.getPlayer().pickUpMoney(1, 0);
                 map.getPlayer().move(1, 0);
-                refresh();
+                refresh(player);
                 break;
         }
     }
 
-    private void refresh() {
+    private void refresh(Player player) {
         context.setFill(Color.BLACK);
         context.fillRect(0, 0, canvas.getWidth(), canvas.getHeight());
         for (int x = 0; x < map.getWidth(); x++) {
             for (int y = 0; y < map.getHeight(); y++) {
                 Cell cell = map.getCell(x, y);
                 if (cell.getActor() != null) {
-                    Tiles.drawTile(context, cell.getActor(), x, y);
+                    Tiles.drawTile(context, cell.getActor(), x, y, player);
                 } else if (cell.getItem() != null) {
-                    Tiles.drawTile(context, cell.getItem(), x, y);
+                    Tiles.drawTile(context, cell.getItem(), x, y, player);
                 } else {
-                    Tiles.drawTile(context, cell, x, y);
+                    Tiles.drawTile(context, cell, x, y, player);
                 }
             }
         }

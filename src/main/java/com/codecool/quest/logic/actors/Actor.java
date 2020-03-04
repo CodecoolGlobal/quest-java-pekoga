@@ -10,7 +10,7 @@ import java.util.HashSet;
 import java.util.Set;
 
 public abstract class Actor implements Drawable {
-    private static Cell cell;
+    private Cell cell;
     private int health = 10;
     private boolean hasKey = false;
     private boolean hasGun = false;
@@ -67,11 +67,11 @@ public abstract class Actor implements Drawable {
         return cell;
     }
 
-    public static int getX() {
+    public int getX() {
         return cell.getX();
     }
 
-    public static int getY() {
+    public int getY() {
         return cell.getY();
     }
 

@@ -1,7 +1,7 @@
 package com.codecool.quest.logic;
 
+import com.codecool.quest.logic.actors.Pedestrian;
 import com.codecool.quest.logic.actors.Player;
-import com.codecool.quest.logic.actors.Skeleton;
 import com.codecool.quest.logic.items.Money;
 import com.codecool.quest.logic.items.Weapon;
 import com.codecool.quest.logic.items.Weapon2;
@@ -135,7 +135,8 @@ public class MapLoader {
                             new Weapon2(cell);
                             break;
                         case 'P':
-                            cell.setType(CellType.PEDESTRIAN);
+                            cell.setType(CellType.PAVEMENT1);
+                            map.setPedestrian(new Pedestrian(cell));
                             break;
                         case 'o':
                             cell.setType(CellType.DOG);
