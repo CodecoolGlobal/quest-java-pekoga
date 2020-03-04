@@ -1,6 +1,8 @@
 package com.codecool.quest.logic;
 
 public enum CellType {
+    FLOOR("floor"), // For ActorTest only
+    WALL("wall"), // For ActorTest only
     EMPTY("empty"),
     HOUSE1("house1"),
     HOUSE2("house2"),
@@ -37,8 +39,6 @@ public enum CellType {
     DUCK("duck"),
     PEDESTRIAN("pedestrian"),
     DOG("dog");
-
-
 
     private final String tileName;
 
