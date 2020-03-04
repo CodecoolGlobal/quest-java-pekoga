@@ -1,18 +1,14 @@
 package com.codecool.quest;
 
 import com.codecool.quest.logic.Cell;
-import com.codecool.quest.logic.CellType;
 import com.codecool.quest.logic.GameMap;
 import com.codecool.quest.logic.MapLoader;
 import javafx.application.Application;
 import javafx.geometry.Insets;
-import javafx.geometry.Pos;
 import javafx.scene.Scene;
 import javafx.scene.canvas.Canvas;
 import javafx.scene.canvas.GraphicsContext;
-import javafx.scene.control.Button;
 import javafx.scene.control.Label;
-import javafx.scene.control.TextField;
 import javafx.scene.input.KeyEvent;
 import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.GridPane;
@@ -27,7 +23,7 @@ public class Main extends Application {
             map.getHeight() * Tiles.TILE_WIDTH / 0.1);
     GraphicsContext context = canvas.getGraphicsContext2D();
 
-    Label healthLabel = new Label();
+    Label healthValue = new Label();
     Label moneyLabel = new Label();
     Label inventoryLabel = new Label();
 
@@ -41,13 +37,19 @@ public class Main extends Application {
         ui.setPrefWidth(150);
         ui.setPadding(new Insets(0));
 
-        ui.add(new Label("Health: "), 0, 0);
-        ui.add(healthLabel, 1, 0);
-        healthLabel.setFont(new Font("Arial", 20));
-        ui.add(new Label("Money: "), 0, 2);
+        Label healthText = new Label("Health: ");
+        ui.add(healthText, 0, 0);
+        healthText.setFont(new Font("Arial", 20));
+        ui.add(healthValue, 1, 0);
+        healthValue.setFont(new Font("Arial", 20));
+        Label moneyText = new Label("Money: ");
+        ui.add(moneyText, 0, 2);
+        moneyText.setFont(new Font("Arial", 20));
         ui.add(moneyLabel, 1, 2);
         moneyLabel.setFont(new Font("Arial", 20));
-        ui.add(new Label("\nInventory: \n"), 0, 3);
+        Label inventoryText = new Label("Inventory: ");
+        ui.add(inventoryText, 0, 3);
+        inventoryText.setFont(new Font("Arial", 20));
         ui.add(inventoryLabel, 0, 4);
         inventoryLabel.setFont(new Font("Arial", 20));
 
@@ -117,7 +119,7 @@ public class Main extends Application {
                 }
             }
         }
-        healthLabel.setText("" + map.getPlayer().getHealth());
+        healthValue.setText("" + map.getPlayer().getHealth());
         moneyLabel.setText("" + map.getPlayer().getMoney());
         inventoryLabel.setText("" + map.getPlayer().getInventory());
     }
