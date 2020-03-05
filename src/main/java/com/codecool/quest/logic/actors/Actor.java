@@ -58,11 +58,11 @@ public abstract class Actor implements Drawable {
 
         if (!barrierSet.contains(typeOfCell)) {
             cell.setActor(null);
-            if (cell.getItem() != null && cell.getItem().getTileName().contains("money")) {
-            ;
+            if (cell.getItem() != null && cell.getItem().getTileName().equals("money")) {
+            } else if (cell.getItem() != null && cell.getItem().getTileName().equals("pistol")) {
+            } else if (cell.getItem() != null && cell.getItem().getTileName().equals("gun")) {
             } else {
                 cell.setItem(null);
-
             }
             nextCell.setActor(this);
             cell = nextCell;
@@ -140,12 +140,15 @@ public abstract class Actor implements Drawable {
                 switch (itemType) {
                     case "gun":
                         setHasGun(true);
+                        getCell().getNeighbor(dx, dy).setItem(null);
                         break;
                     case "pistol":
                         setHasPistol(true);
+                        getCell().getNeighbor(dx, dy).setItem(null);
                         break;
                     case "key":
                         setHasKey(true);
+                        getCell().getNeighbor(dx, dy).setItem(null);
                         break;
                 }
                 setInventory();

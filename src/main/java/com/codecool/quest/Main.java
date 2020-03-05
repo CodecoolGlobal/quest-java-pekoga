@@ -86,10 +86,11 @@ public class Main extends Application {
     private void onKeyPressed(KeyEvent keyEvent) {
         switch (keyEvent.getCode()) {
             case UP:
-                player.pickUpItem("gun", 0, -1);
-                player.pickUpItem("key", 0, -1);
-                player.pickUpItem("pistol", 0, -1);
+
                 if (!player.isInACar()) {
+                    player.pickUpItem("gun", 0, -1);
+                    player.pickUpItem("key", 0, -1);
+                    player.pickUpItem("pistol", 0, -1);
                     player.pickUpMoney(0, -1);
                 }
                 if (player.isInACar()) {
@@ -104,10 +105,11 @@ public class Main extends Application {
                 refresh(player);
                 break;
             case DOWN:
-                player.pickUpItem("gun", 0, 1);
-                player.pickUpItem("key", 0, 1);
-                player.pickUpItem("pistol", 0, 1);
+
                 if (!player.isInACar()) {
+                    player.pickUpItem("gun", 0, 1);
+                    player.pickUpItem("key", 0, 1);
+                    player.pickUpItem("pistol", 0, 1);
                     player.pickUpMoney(0, 1);
                 }
                 if (player.isInACar()) {
@@ -122,10 +124,11 @@ public class Main extends Application {
                 refresh(player);
                 break;
             case LEFT:
-                player.pickUpItem("gun", -1, 0);
-                player.pickUpItem("key", -1, 0);
-                player.pickUpItem("pistol", -1, 0);
+
                 if (!player.isInACar()) {
+                    player.pickUpItem("gun", -1, 0);
+                    player.pickUpItem("key", -1, 0);
+                    player.pickUpItem("pistol", -1, 0);
                     player.pickUpMoney(-1, 0);
                 }
                 if (player.isInACar()) {
@@ -140,10 +143,11 @@ public class Main extends Application {
                 refresh(player);
                 break;
             case RIGHT:
-                player.pickUpItem("gun", 1, 0);
-                player.pickUpItem("key", 1, 0);
-                player.pickUpItem("pistol", 1, 0);
+
                 if (!player.isInACar()) {
+                    player.pickUpItem("gun", 1, 0);
+                    player.pickUpItem("key", 1, 0);
+                    player.pickUpItem("pistol", 1, 0);
                     player.pickUpMoney(1, 0);
                 }
                 if (player.isInACar()) {
