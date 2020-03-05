@@ -5,8 +5,7 @@ import com.codecool.quest.logic.CellType;
 import com.codecool.quest.logic.Drawable;
 import com.codecool.quest.logic.items.Money;
 
-import java.util.HashSet;
-import java.util.Set;
+import java.util.*;
 
 public abstract class Actor implements Drawable {
     private Cell cell;
@@ -16,6 +15,7 @@ public abstract class Actor implements Drawable {
     private boolean hasPistol = false;
     private int money = 0;
     private String inventory = "";
+
 
 
     public Actor(Cell cell) {
@@ -48,8 +48,15 @@ public abstract class Actor implements Drawable {
             add(CellType.BUILDING9);
 
         }};
+
+
         Cell nextCell = cell.getNeighbor(dx, dy);
         CellType typeOfCell = nextCell.getType();
+
+        if (getCell().getNeighbor(dx, dy).getActor() != null) {
+            return;
+        }
+
         if (!barrierSet.contains(typeOfCell)) {
             cell.setActor(null);
             if (cell.getItem() != null && cell.getItem().getTileName().contains("money")) {
@@ -159,6 +166,7 @@ public abstract class Actor implements Drawable {
     public void hitPedestrian(int dx, int dy) {
         if (getCell().getNeighbor(dx, dy).getActor() != null) {
             if (getCell().getNeighbor(dx, dy).getActor().getTileName().equals("pedestrian")) {
+                getCell().getNeighbor(dx, dy).setActor(null);
                 Money money = new Money(getCell().getNeighbor(dx, dy));
                 getCell().getNeighbor(dx, dy).setItem(money);
             }

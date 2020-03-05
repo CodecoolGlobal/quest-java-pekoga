@@ -11,6 +11,7 @@ public class Player extends Actor {
     String vehicleEntered = "";
 
     ArrayList<String> carTileNames = new ArrayList<String>(Arrays.asList("carv1", "carv1_vertical", "carh1", "carh1_horizontal"));
+
     public Player(Cell cell) {
         super(cell);
     }
@@ -27,12 +28,12 @@ public class Player extends Actor {
         }
     }
 
-    public void turnPlayer(String nextLook) {
-        this.playerTile = nextLook;
+    public boolean isInACar() {
+        return carTileNames.contains(this.getTileName());
     }
 
-    public boolean isInACar() {
-        return carTileNames.contains(this.playerTile);
+    public void turnPlayer(String nextLook) {
+        this.playerTile = nextLook;
     }
 
     public void enterExitVehicle(boolean isInCar) {
