@@ -16,11 +16,16 @@ public class Tiles {
     private static Image tileset_rotated = new Image("/tiles_rotated.png", 543 * 4, 543 * 4, true, false);
     private static Image tileset_rotated_vertical = new Image("/tiles_rotated_vertical.png", 543 * 4, 543 * 4, true, false);
     private static Image tileset_vertical = new Image("/tiles_vertical.png", 543 * 4, 543 * 4, true, false);
+    private static Image player_up = new Image("/player/player_up.png", 60, 60, true, false);
+    private static Image player_down = new Image("/player/player_down.png", 60, 60, true, false);
+    private static Image player_right = new Image("/player/player_right.png", 60, 60, true, false);
+    private static Image player_left = new Image("/player/player_left.png", 60, 60, true, false);
     private static Map<String, Tile> tileMap = new HashMap<>();
 
     public static class Tile {
         public final int x, y, w, h;
         public final Image source;
+
         Tile(int i, int j, Image sourceFile) {
             x = i * (TILE_WIDTH + 4);
             y = j * (TILE_WIDTH + 4);
@@ -35,7 +40,10 @@ public class Tiles {
         tileMap.put("road", new Tile(0, 0, tileset));
         tileMap.put("wall", new Tile(8, 0, tileset));
         tileMap.put("floor", new Tile(2, 0, tileset));
-        tileMap.put("player", new Tile(11, 22, tileset));
+        tileMap.put("player_up", new Tile(0, 0, player_up));
+        tileMap.put("player_down", new Tile(0, 0, player_down));
+        tileMap.put("player_right", new Tile(0, 0, player_right));
+        tileMap.put("player_left", new Tile(0, 0, player_left));
         tileMap.put("skeleton", new Tile(29, 6, tileset));
         tileMap.put("pistol", new Tile(5, 31, tileset));
         tileMap.put("closedDoor", new Tile(6, 16, tileset));
@@ -70,7 +78,7 @@ public class Tiles {
         tileMap.put("ground", new Tile(2, 0, tileset));
         tileMap.put("duck", new Tile(25, 7, tileset));
         tileMap.put("dog", new Tile(31, 7, tileset));
-        tileMap.put("pedestrian", new Tile(30,3, tileset));
+        tileMap.put("pedestrian", new Tile(30, 3, tileset));
         tileMap.put("key", new Tile(16, 24, tileset));
 
         // Rotated tiles from different source
