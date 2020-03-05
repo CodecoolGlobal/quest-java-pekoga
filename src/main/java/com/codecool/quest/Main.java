@@ -111,6 +111,10 @@ public class Main extends Application {
                 player.turnPlayer(map.getPlayer().getTileName(), "carh1_horizontal", "carh1");
                 refresh(player);
                 break;
+            case F:
+                player.enterExitVehicle(player.isInACar());
+                refresh(player);
+                break;
         }
     }
 
