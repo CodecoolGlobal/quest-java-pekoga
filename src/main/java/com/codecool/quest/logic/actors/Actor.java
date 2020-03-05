@@ -25,7 +25,7 @@ public abstract class Actor implements Drawable {
     }
 
     public void move(int dx, int dy) {
-        Set<Enum> barrierSet = new HashSet<Enum>() {{
+        Set<Enum> barrierSet = new HashSet<>() {{
             add(CellType.HOUSE1);
             add(CellType.HOUSE2);
             add(CellType.HOUSE3);

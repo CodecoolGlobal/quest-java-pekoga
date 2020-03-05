@@ -1,11 +1,13 @@
 package com.codecool.quest.logic;
 
 import com.codecool.quest.logic.actors.Actor;
+import com.codecool.quest.logic.actors.Enemy;
 import com.codecool.quest.logic.items.Item;
 
 public class Cell implements Drawable {
     private CellType type;
     private Actor actor;
+    private Enemy enemy;
     private Item item;
     private GameMap gameMap;
     private int x, y;
@@ -19,6 +21,14 @@ public class Cell implements Drawable {
 
     public CellType getType() {
         return type;
+    }
+
+    public Enemy getEnemy() {
+        return enemy;
+    }
+
+    public void setEnemy(Enemy enemy) {
+        this.enemy = enemy;
     }
 
     public void setType(CellType type) {
@@ -53,5 +63,7 @@ public class Cell implements Drawable {
     public int getY() {
         return y;
     }
+
+
 
 }

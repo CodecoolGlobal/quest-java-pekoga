@@ -1,6 +1,7 @@
 package com.codecool.quest.logic;
 
 import com.codecool.quest.logic.actors.Pedestrian;
+import com.codecool.quest.logic.actors.Enemy;
 import com.codecool.quest.logic.actors.Player;
 import com.codecool.quest.logic.items.Money;
 import com.codecool.quest.logic.items.Weapon;
@@ -128,7 +129,8 @@ public class MapLoader {
                             new Money(cell);
                             break;
                         case 'E':
-                            cell.setType(CellType.ENEMY);
+                            cell.setType(CellType.EMPTY);
+                            map.setEnemy(new Enemy(cell));
                             break;
                         case 'Q':
                             cell.setType(CellType.EMPTY);

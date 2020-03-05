@@ -3,6 +3,7 @@ package com.codecool.quest;
 import com.codecool.quest.logic.Cell;
 import com.codecool.quest.logic.GameMap;
 import com.codecool.quest.logic.MapLoader;
+import com.codecool.quest.logic.actors.Enemy;
 import com.codecool.quest.logic.actors.Player;
 import javafx.application.Application;
 import javafx.geometry.Insets;
@@ -17,6 +18,8 @@ import javafx.scene.paint.Color;
 import javafx.scene.text.Font;
 import javafx.stage.Stage;
 
+import java.util.*;
+
 public class Main extends Application {
     GameMap map = MapLoader.loadMap();
     Player player = map.getPlayer();
@@ -28,6 +31,14 @@ public class Main extends Application {
     Label healthValue = new Label();
     Label moneyLabel = new Label();
     Label inventoryLabel = new Label();
+    Timer randomMoveTimer = new Timer();
+    TimerTask randomMove = new TimerTask() {
+        @Override
+        public void run() {
+
+        }
+    };
+
 
     public static void main(String[] args) {
         launch(args);
@@ -63,10 +74,21 @@ public class Main extends Application {
         Scene scene = new Scene(borderPane);
         primaryStage.setScene(scene);
         refresh(player);
+
         scene.setOnKeyPressed(this::onKeyPressed);
 
         primaryStage.setTitle("Codecool GTA");
         primaryStage.show();
+        var enemy = map.getEnemy();
+        Timer randomMoveTimer = new Timer();
+        randomMoveTimer.schedule(new TimerTask() {
+            @Override
+            public void run() {
+                enemy.randomMove();
+                refresh(player);
+            }
+        }, 0, 500);
+
     }
 
     private void onKeyPressed(KeyEvent keyEvent) {

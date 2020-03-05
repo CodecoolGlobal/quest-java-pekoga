@@ -1,6 +1,7 @@
 package com.codecool.quest.logic;
 
 import com.codecool.quest.logic.actors.Pedestrian;
+import com.codecool.quest.logic.actors.Enemy;
 import com.codecool.quest.logic.actors.Player;
 
 public class GameMap {
@@ -9,6 +10,7 @@ public class GameMap {
     private Cell[][] cells;
 
     private Player player;
+    private Enemy enemy;
     private Pedestrian pedestrian;
 
     public GameMap(int width, int height, CellType defaultCellType) {
@@ -61,5 +63,13 @@ public class GameMap {
 
     public int getHeight() {
         return height;
+    }
+
+    public Enemy getEnemy() {
+        return enemy;
+    }
+
+    public void setEnemy(Enemy enemy) {
+        this.enemy = enemy;
     }
 }
