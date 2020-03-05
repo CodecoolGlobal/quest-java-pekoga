@@ -89,7 +89,9 @@ public class Main extends Application {
                 player.pickUpItem("gun", 0, -1);
                 player.pickUpItem("key", 0, -1);
                 player.pickUpItem("pistol", 0, -1);
-                //player.pickUpMoney(0, -1);
+                if (!player.isInACar()) {
+                    player.pickUpMoney(0, -1);
+                }
                 if (player.isInACar()) {
                     player.hitPedestrian(0, -1);
                 }
@@ -105,7 +107,9 @@ public class Main extends Application {
                 player.pickUpItem("gun", 0, 1);
                 player.pickUpItem("key", 0, 1);
                 player.pickUpItem("pistol", 0, 1);
-                //player.pickUpMoney(0, 1);
+                if (!player.isInACar()) {
+                    player.pickUpMoney(0, 1);
+                }
                 if (player.isInACar()) {
                     player.hitPedestrian(0, 1);
                 }
@@ -121,7 +125,9 @@ public class Main extends Application {
                 player.pickUpItem("gun", -1, 0);
                 player.pickUpItem("key", -1, 0);
                 player.pickUpItem("pistol", -1, 0);
-                //player.pickUpMoney(-1, 0);
+                if (!player.isInACar()) {
+                    player.pickUpMoney(-1, 0);
+                }
                 if (player.isInACar()) {
                     player.hitPedestrian(-1, 0);
                 }
@@ -137,7 +143,9 @@ public class Main extends Application {
                 player.pickUpItem("gun", 1, 0);
                 player.pickUpItem("key", 1, 0);
                 player.pickUpItem("pistol", 1, 0);
-                //player.pickUpMoney(1, 0);
+                if (!player.isInACar()) {
+                    player.pickUpMoney(1, 0);
+                }
                 if (player.isInACar()) {
                     player.hitPedestrian(1, 0);
                 }

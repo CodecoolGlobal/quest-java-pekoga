@@ -151,6 +151,7 @@ public abstract class Actor implements Drawable {
         if (getCell().getNeighbor(dx, dy).getItem() != null) {
             if (getCell().getNeighbor(dx, dy).getItem().getTileName().equals("money")) {
                 setMoney(100);
+                getCell().getNeighbor(dx, dy).setItem(null);
             }
         }
     }
