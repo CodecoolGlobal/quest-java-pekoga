@@ -92,7 +92,11 @@ public class Main extends Application {
                 //player.pickUpMoney(0, -1);
                 player.hitPedestrian(0, -1);
                 player.move(0, -1);
-                player.turnPlayer(map.getPlayer().getTileName(), "carv1", "carv1_vertical");
+                if (player.isInACar()) {
+                    player.turnPlayersCar(map.getPlayer().getTileName(), "carv1", "carv1_vertical");
+                } else {
+                    player.turnPlayer("player_up");
+                }
                 refresh(player);
                 break;
             case DOWN:
@@ -102,7 +106,11 @@ public class Main extends Application {
                 //player.pickUpMoney(0, 1);
                 player.hitPedestrian(0, 1);
                 player.move(0, 1);
-                player.turnPlayer(map.getPlayer().getTileName(), "carv1_vertical", "carv1");
+                if (player.isInACar()) {
+                    player.turnPlayersCar(map.getPlayer().getTileName(), "carv1_vertical", "carv1");
+                } else {
+                    player.turnPlayer("player_down");
+                }
                 refresh(player);
                 break;
             case LEFT:
@@ -112,7 +120,11 @@ public class Main extends Application {
                 //player.pickUpMoney(-1, 0);
                 player.hitPedestrian(-1, 0);
                 player.move(-1, 0);
-                player.turnPlayer(map.getPlayer().getTileName(), "carh1", "carh1_horizontal");
+                if (player.isInACar()) {
+                    player.turnPlayersCar(map.getPlayer().getTileName(), "carh1", "carh1_horizontal");
+                } else {
+                    player.turnPlayer("player_left");
+                }
                 refresh(player);
                 break;
             case RIGHT:
@@ -122,14 +134,22 @@ public class Main extends Application {
                 //player.pickUpMoney(1, 0);
                 player.hitPedestrian(1, 0);
                 player.move(1, 0);
-                player.turnPlayer(map.getPlayer().getTileName(), "carh1_horizontal", "carh1");
+                if (player.isInACar()) {
+                    player.turnPlayersCar(map.getPlayer().getTileName(), "carh1_horizontal", "carh1");
+                } else {
+                    player.turnPlayer("player_right");
+                }
+                refresh(player);
+                break;
+            case F:
+                player.enterExitVehicle(player.isInACar());
                 refresh(player);
                 break;
         }
     }
 
     private void refresh(Player player) {
-        context.setFill(Color.BLACK);
+        context.setFill(Color.rgb(71, 45, 60)); // Empty cell's color
         context.fillRect(0, 0, canvas.getWidth(), canvas.getHeight());
         for (int x = 0; x < map.getWidth(); x++) {
             for (int y = 0; y < map.getHeight(); y++) {
