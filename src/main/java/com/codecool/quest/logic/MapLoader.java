@@ -8,10 +8,13 @@ import com.codecool.quest.logic.items.Weapon;
 import com.codecool.quest.logic.items.Weapon2;
 
 import java.io.InputStream;
+import java.util.ArrayList;
 import java.util.Scanner;
 
 public class MapLoader {
     public static GameMap loadMap() {
+        var enemies = new ArrayList<Enemy>();
+        int numberOfEnemies = 0;
         InputStream is = MapLoader.class.getResourceAsStream("/map.txt");
         Scanner scanner = new Scanner(is);
         int width = scanner.nextInt();
@@ -130,7 +133,10 @@ public class MapLoader {
                             break;
                         case 'E':
                             cell.setType(CellType.EMPTY);
-                            map.setEnemy(new Enemy(cell));
+                            Enemy enemy = new Enemy(cell);
+                            enemy.setName(String.valueOf(numberOfEnemies));
+                            enemies.add(enemy);
+                            map.setEnemy(enemy);
                             break;
                         case 'Q':
                             cell.setType(CellType.EMPTY);

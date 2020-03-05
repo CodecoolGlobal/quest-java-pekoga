@@ -6,6 +6,7 @@ import java.util.*;
 
 
 public class Enemy extends Actor {
+    String name;
     public Enemy(Cell cell) {
         super(cell);
     }
@@ -25,5 +26,9 @@ public class Enemy extends Actor {
             coordinateY = reducedCoordinateList.get(rand.nextInt(reducedCoordinateList.size()));
         }
         this.move(coordinateX, coordinateY);
+    }
+
+    public void setName(String name) {
+        this.name = name;
     }
 }
