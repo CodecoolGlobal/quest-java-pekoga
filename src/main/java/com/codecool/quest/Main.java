@@ -90,7 +90,9 @@ public class Main extends Application {
                 player.pickUpItem("key", 0, -1);
                 player.pickUpItem("pistol", 0, -1);
                 //player.pickUpMoney(0, -1);
-                player.hitPedestrian(0, -1);
+                if (player.isInACar()) {
+                    player.hitPedestrian(0, -1);
+                }
                 player.move(0, -1);
                 if (player.isInACar()) {
                     player.turnPlayersCar(map.getPlayer().getTileName(), "carv1", "carv1_vertical");
@@ -104,7 +106,9 @@ public class Main extends Application {
                 player.pickUpItem("key", 0, 1);
                 player.pickUpItem("pistol", 0, 1);
                 //player.pickUpMoney(0, 1);
-                player.hitPedestrian(0, 1);
+                if (player.isInACar()) {
+                    player.hitPedestrian(0, 1);
+                }
                 player.move(0, 1);
                 if (player.isInACar()) {
                     player.turnPlayersCar(map.getPlayer().getTileName(), "carv1_vertical", "carv1");
@@ -118,7 +122,9 @@ public class Main extends Application {
                 player.pickUpItem("key", -1, 0);
                 player.pickUpItem("pistol", -1, 0);
                 //player.pickUpMoney(-1, 0);
-                player.hitPedestrian(-1, 0);
+                if (player.isInACar()) {
+                    player.hitPedestrian(-1, 0);
+                }
                 player.move(-1, 0);
                 if (player.isInACar()) {
                     player.turnPlayersCar(map.getPlayer().getTileName(), "carh1", "carh1_horizontal");
@@ -132,7 +138,9 @@ public class Main extends Application {
                 player.pickUpItem("key", 1, 0);
                 player.pickUpItem("pistol", 1, 0);
                 //player.pickUpMoney(1, 0);
-                player.hitPedestrian(1, 0);
+                if (player.isInACar()) {
+                    player.hitPedestrian(1, 0);
+                }
                 player.move(1, 0);
                 if (player.isInACar()) {
                     player.turnPlayersCar(map.getPlayer().getTileName(), "carh1_horizontal", "carh1");
