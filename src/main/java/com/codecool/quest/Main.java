@@ -23,6 +23,7 @@ import java.util.*;
 public class Main extends Application {
     GameMap map = MapLoader.loadMap();
     Player player = map.getPlayer();
+    Enemy enemy = map.getEnemy();
     Canvas canvas = new Canvas(
             map.getWidth() * Tiles.TILE_WIDTH / 3.3,
             map.getHeight() * Tiles.TILE_WIDTH / 0.1);
@@ -31,13 +32,6 @@ public class Main extends Application {
     Label healthValue = new Label();
     Label moneyLabel = new Label();
     Label inventoryLabel = new Label();
-    Timer randomMoveTimer = new Timer();
-    TimerTask randomMove = new TimerTask() {
-        @Override
-        public void run() {
-
-        }
-    };
 
 
     public static void main(String[] args) {
@@ -79,15 +73,8 @@ public class Main extends Application {
 
         primaryStage.setTitle("Codecool GTA");
         primaryStage.show();
-        var enemy = map.getEnemy();
-        Timer randomMoveTimer = new Timer();
-        randomMoveTimer.schedule(new TimerTask() {
-            @Override
-            public void run() {
-                enemy.randomMove();
-                refresh(player);
-            }
-        }, 0, 500);
+
+        randomMovingEnemy();
 
     }
 
@@ -146,5 +133,16 @@ public class Main extends Application {
         healthValue.setText("" + map.getPlayer().getHealth());
         moneyLabel.setText("" + map.getPlayer().getMoney());
         inventoryLabel.setText("" + map.getPlayer().getInventory());
+    }
+
+    private void randomMovingEnemy() {
+        Timer randomMoveTimer = new Timer();
+        randomMoveTimer.schedule(new TimerTask() {
+            @Override
+            public void run() {
+                enemy.randomMove();
+                refresh(player);
+            }
+        }, 0, 500);
     }
 }
