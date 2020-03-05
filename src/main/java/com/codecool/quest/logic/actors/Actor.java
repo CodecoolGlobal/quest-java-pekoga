@@ -53,7 +53,7 @@ public abstract class Actor implements Drawable {
         if (!barrierSet.contains(typeOfCell)) {
             cell.setActor(null);
             if (cell.getItem() != null && cell.getItem().getTileName().contains("money")) {
-                System.out.println(cell.getItem());
+            ;
             } else {
                 cell.setItem(null);
 
