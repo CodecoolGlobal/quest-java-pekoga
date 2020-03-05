@@ -78,6 +78,7 @@ public class Main extends Application {
                 //player.pickUpMoney(0, -1);
                 player.hitPedestrian(0, -1);
                 player.move(0, -1);
+                player.turnPlayer(map.getPlayer().getTileName(), "carv1", "carv1_vertical");
                 refresh(player);
                 break;
             case DOWN:
@@ -87,6 +88,7 @@ public class Main extends Application {
                 //player.pickUpMoney(0, 1);
                 player.hitPedestrian(0, 1);
                 player.move(0, 1);
+                player.turnPlayer(map.getPlayer().getTileName(), "carv1_vertical", "carv1");
                 refresh(player);
                 break;
             case LEFT:
@@ -96,6 +98,7 @@ public class Main extends Application {
                 //player.pickUpMoney(-1, 0);
                 player.hitPedestrian(-1, 0);
                 player.move(-1, 0);
+                player.turnPlayer(map.getPlayer().getTileName(), "carh1", "carh1_horizontal");
                 refresh(player);
                 break;
             case RIGHT:
@@ -105,6 +108,7 @@ public class Main extends Application {
                 //player.pickUpMoney(1, 0);
                 player.hitPedestrian(1, 0);
                 player.move(1, 0);
+                player.turnPlayer(map.getPlayer().getTileName(), "carh1_horizontal", "carh1");
                 refresh(player);
                 break;
         }

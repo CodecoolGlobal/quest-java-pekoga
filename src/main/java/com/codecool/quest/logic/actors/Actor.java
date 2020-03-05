@@ -5,14 +5,12 @@ import com.codecool.quest.logic.CellType;
 import com.codecool.quest.logic.Drawable;
 import com.codecool.quest.logic.items.Money;
 
-import java.util.ArrayList;
-
 import java.util.HashSet;
 import java.util.Set;
 
 public abstract class Actor implements Drawable {
     private Cell cell;
-    private int health = 10;
+    private int health = 100;
     private boolean hasKey = false;
     private boolean hasGun = false;
     private boolean hasPistol = false;
