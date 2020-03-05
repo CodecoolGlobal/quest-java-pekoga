@@ -95,7 +95,7 @@ public class MapLoader {
                             cell.setType(CellType.PAVEMENT2);
                             break;
                         case '@':
-                            cell.setType(CellType.EMPTY);
+                            cell.setType(CellType.PAVEMENT1);
                             map.setPlayer(new Player(cell));
                             break;
                         case 'W':
