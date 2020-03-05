@@ -142,8 +142,10 @@ public class Main extends Application {
                 refresh(player);
                 break;
             case F:
-                player.enterExitVehicle(player.isInACar());
-                refresh(player);
+                if (player.getHasGun() || player.getHasPistol()) {
+                    player.enterExitVehicle(player.isInACar());
+                    refresh(player);
+                }
                 break;
         }
     }
