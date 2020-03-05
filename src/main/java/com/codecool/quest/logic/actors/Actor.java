@@ -174,4 +174,32 @@ public abstract class Actor implements Drawable {
             }
         }
     }
+
+    public void shootPedestrian(int dx, int dy) {
+        if (dx > 0) {
+            if (getCell().getNeighbor(dx + 1, dy).getActor() != null) {
+                getCell().getNeighbor(dx + 1, dy).setActor(null);
+                Money money = new Money(getCell().getNeighbor(dx + 1, dy));
+                getCell().getNeighbor(dx + 1, dy).setItem(money);
+            }
+        } else if (dx < 0) {
+            if (getCell().getNeighbor(dx - 1, dy).getActor() != null) {
+                getCell().getNeighbor(dx - 1, dy).setActor(null);
+                Money money = new Money(getCell().getNeighbor(dx - 1, dy));
+                getCell().getNeighbor(dx - 1, dy).setItem(money);
+            }
+        } else if (dy > 0) {
+            if (getCell().getNeighbor(dx, dy + 1).getActor() != null) {
+                getCell().getNeighbor(dx, dy + 1).setActor(null);
+                Money money = new Money(getCell().getNeighbor(dx, dy + 1));
+                getCell().getNeighbor(dx, dy + 1).setItem(money);
+            }
+        } else if (dy < 0) {
+            if (getCell().getNeighbor(dx, dy - 1).getActor() != null) {
+                getCell().getNeighbor(dx, dy - 1).setActor(null);
+                Money money = new Money(getCell().getNeighbor(dx, dy - 1));
+                getCell().getNeighbor(dx, dy - 1).setItem(money);
+            }
+        }
+    }
 }

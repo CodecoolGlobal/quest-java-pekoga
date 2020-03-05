@@ -167,6 +167,13 @@ public class Main extends Application {
                     refresh(player);
                 }
                 break;
+            case S:
+                if (player.getHasGun() || player.getHasPistol()) {
+                    player.shootPedestrian(0, 1);
+                    player.shootPedestrian(1, 0);
+                    player.shootPedestrian(-1, 0);
+                    player.shootPedestrian(0, -1);
+                }
         }
     }
 
