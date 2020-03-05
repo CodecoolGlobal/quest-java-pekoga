@@ -50,6 +50,9 @@ public abstract class Actor implements Drawable {
         }};
         Cell nextCell = cell.getNeighbor(dx, dy);
         CellType typeOfCell = nextCell.getType();
+        if (getCell().getNeighbor(dx, dy).getActor() != null) {
+            return;
+        }
         if (!barrierSet.contains(typeOfCell)) {
             cell.setActor(null);
             if (cell.getItem() != null && cell.getItem().getTileName().contains("money")) {
