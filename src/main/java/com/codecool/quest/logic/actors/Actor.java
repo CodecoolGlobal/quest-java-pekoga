@@ -154,6 +154,7 @@ public abstract class Actor implements Drawable {
         if (getCell().getNeighbor(dx, dy).getItem() != null) {
             if (getCell().getNeighbor(dx, dy).getItem().getTileName().equals("money")) {
                 setMoney(100);
+                getCell().getNeighbor(dx, dy).setItem(null);
             }
         }
     }
@@ -163,7 +164,6 @@ public abstract class Actor implements Drawable {
             if (getCell().getNeighbor(dx, dy).getActor().getTileName().equals("pedestrian")) {
                 Money money = new Money(getCell().getNeighbor(dx, dy));
                 getCell().getNeighbor(dx, dy).setItem(money);
-                System.out.println(getCell().getNeighbor(dx, dy).getItem().getTileName());
             }
         }
     }
