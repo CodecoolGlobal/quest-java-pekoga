@@ -3,15 +3,14 @@ package com.codecool.quest.logic.actors;
 import com.codecool.quest.logic.Cell;
 import com.codecool.quest.logic.CellType;
 import com.codecool.quest.logic.Drawable;
-
-import java.util.ArrayList;
+import com.codecool.quest.logic.items.Money;
 
 import java.util.HashSet;
 import java.util.Set;
 
 public abstract class Actor implements Drawable {
     private Cell cell;
-    private int health = 10;
+    private int health = 100;
     private boolean hasKey = false;
     private boolean hasGun = false;
     private boolean hasPistol = false;
@@ -53,7 +52,12 @@ public abstract class Actor implements Drawable {
         CellType typeOfCell = nextCell.getType();
         if (!barrierSet.contains(typeOfCell)) {
             cell.setActor(null);
-            cell.setItem(null);
+            if (cell.getItem() != null && cell.getItem().getTileName().contains("money")) {
+                System.out.println(cell.getItem());
+            } else {
+                cell.setItem(null);
+
+            }
             nextCell.setActor(this);
             cell = nextCell;
         }
@@ -147,6 +151,16 @@ public abstract class Actor implements Drawable {
         if (getCell().getNeighbor(dx, dy).getItem() != null) {
             if (getCell().getNeighbor(dx, dy).getItem().getTileName().equals("money")) {
                 setMoney(100);
+            }
+        }
+    }
+
+    public void hitPedestrian(int dx, int dy) {
+        if (getCell().getNeighbor(dx, dy).getActor() != null) {
+            if (getCell().getNeighbor(dx, dy).getActor().getTileName().equals("pedestrian")) {
+                Money money = new Money(getCell().getNeighbor(dx, dy));
+                getCell().getNeighbor(dx, dy).setItem(money);
+                System.out.println(getCell().getNeighbor(dx, dy).getItem().getTileName());
             }
         }
     }
