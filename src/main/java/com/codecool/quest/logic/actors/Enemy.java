@@ -27,8 +27,4 @@ public class Enemy extends Actor {
         }
         this.move(coordinateX, coordinateY);
     }
-
-    public void setName(String name) {
-        this.name = name;
-    }
 }

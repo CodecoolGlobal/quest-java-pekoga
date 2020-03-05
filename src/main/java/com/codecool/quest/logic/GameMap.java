@@ -1,5 +1,6 @@
 package com.codecool.quest.logic;
 
+import com.codecool.quest.logic.actors.Actor;
 import com.codecool.quest.logic.actors.Pedestrian;
 import com.codecool.quest.logic.actors.Enemy;
 import com.codecool.quest.logic.actors.Player;
@@ -69,7 +70,7 @@ public class GameMap {
         return enemy;
     }
 
-    public void setEnemy(Enemy enemy) {
-        this.enemy = enemy;
+    public void setEnemy(Actor enemy) {
+        this.enemy = (Enemy) enemy;
     }
 }

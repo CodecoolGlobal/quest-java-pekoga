@@ -1,5 +1,7 @@
 package com.codecool.quest.logic;
 
+import com.codecool.quest.Main;
+import com.codecool.quest.logic.actors.Actor;
 import com.codecool.quest.logic.actors.Pedestrian;
 import com.codecool.quest.logic.actors.Enemy;
 import com.codecool.quest.logic.actors.Player;
@@ -8,13 +10,10 @@ import com.codecool.quest.logic.items.Weapon;
 import com.codecool.quest.logic.items.Weapon2;
 
 import java.io.InputStream;
-import java.util.ArrayList;
 import java.util.Scanner;
 
 public class MapLoader {
     public static GameMap loadMap() {
-        var enemies = new ArrayList<Enemy>();
-        int numberOfEnemies = 0;
         InputStream is = MapLoader.class.getResourceAsStream("/map.txt");
         Scanner scanner = new Scanner(is);
         int width = scanner.nextInt();
@@ -134,9 +133,8 @@ public class MapLoader {
                         case 'E':
                             cell.setType(CellType.EMPTY);
                             Enemy enemy = new Enemy(cell);
-                            enemy.setName(String.valueOf(numberOfEnemies));
-                            enemies.add(enemy);
                             map.setEnemy(enemy);
+                            Main.addToEnemies(enemy);
                             break;
                         case 'Q':
                             cell.setType(CellType.EMPTY);

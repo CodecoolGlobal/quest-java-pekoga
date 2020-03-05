@@ -3,6 +3,7 @@ package com.codecool.quest;
 import com.codecool.quest.logic.Cell;
 import com.codecool.quest.logic.GameMap;
 import com.codecool.quest.logic.MapLoader;
+import com.codecool.quest.logic.actors.Actor;
 import com.codecool.quest.logic.actors.Enemy;
 import com.codecool.quest.logic.actors.Player;
 import javafx.application.Application;
@@ -23,7 +24,7 @@ import java.util.*;
 public class Main extends Application {
     GameMap map = MapLoader.loadMap();
     Player player = map.getPlayer();
-    Enemy enemy = map.getEnemy();
+    private static List<Actor> enemies = new ArrayList<>();
     Canvas canvas = new Canvas(
             map.getWidth() * Tiles.TILE_WIDTH / 3.3,
             map.getHeight() * Tiles.TILE_WIDTH / 0.1);
@@ -32,6 +33,10 @@ public class Main extends Application {
     Label healthValue = new Label();
     Label moneyLabel = new Label();
     Label inventoryLabel = new Label();
+
+    public static void addToEnemies(Actor actor) {
+        enemies.add(actor);
+    }
 
 
     public static void main(String[] args) {
@@ -148,7 +153,11 @@ public class Main extends Application {
         randomMoveTimer.schedule(new TimerTask() {
             @Override
             public void run() {
-                enemy.randomMove();
+                for (Actor enemy : enemies) {
+                    if (enemy instanceof Enemy) {
+                        ((Enemy) enemy).randomMove();
+                    }
+                }
                 refresh(player);
             }
         }, 0, 500);
