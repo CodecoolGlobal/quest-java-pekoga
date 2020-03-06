@@ -168,11 +168,16 @@ public class Main extends Application {
                 }
                 break;
             case S:
-                if (player.getHasGun() || player.getHasPistol()) {
-                    player.shootPedestrian(0, 1);
-                    player.shootPedestrian(1, 0);
-                    player.shootPedestrian(-1, 0);
-                    player.shootPedestrian(0, -1);
+                if (player.getHasPistol() && !player.getHasGun()) {
+                    player.shootPedestrian(0, 1, 2);
+                    player.shootPedestrian(1, 0, 2);
+                    player.shootPedestrian(-1, 0, 2);
+                    player.shootPedestrian(0, -1, 2);
+                } else if (player.getHasGun()) {
+                    player.shootPedestrian(0, 1, 4);
+                    player.shootPedestrian(1, 0, 4);
+                    player.shootPedestrian(-1, 0, 4);
+                    player.shootPedestrian(0, -1, 4);
                 }
         }
     }
